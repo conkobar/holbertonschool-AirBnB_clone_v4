@@ -12,8 +12,8 @@ $(document).ready( () => {
     $('div.Amenities h4').text('Amenities: ' + amenities.join(', '));
   });
 
-  const url = 'http://0.0.0.0:5001/api/v1/status/'
-  $.get(url, (data) => {
+  const url = 'http://127.0.0.1:5001/api/v1/status/'
+  $.getJSON(url, (data) => {
     const element = document.getElementById('api_status');
     if (data.status === 'OK') {
       element.classList.add('available');
@@ -22,3 +22,5 @@ $(document).ready( () => {
     };
   });
 });
+
+
