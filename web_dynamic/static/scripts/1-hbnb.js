@@ -1,14 +1,11 @@
-$(document).ready( () => {
+$(document).ready(function() {
   const amenities = [];
-  $('input[type="checkbox"]').change( () => {
+  $('li :checkbox').change(function() {
     if (this.checked) {
-      amenities.push(this.id);
+      amenities.push($(this).attr('data-name'));
     } else {
-      const idx = amenities.indexOf(this.id);
-      if (idx >= 0) {
-        amenities.splice(idx, 1);
-      };
-    };
-    $('div.Amenities h4').text('Amenities: ' + amenities.join(', '));
+      amenities.pop();
+    }
+    $('.amenities h4').html(amenities.join(', '));
   });
 });
