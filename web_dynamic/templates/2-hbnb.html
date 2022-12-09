@@ -31,13 +31,29 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script
       type="text/javascript"
-      src="/static/scripts/1-hbnb.js?{{ cache_id }}"
+      src="/static/scripts/2-hbnb.js?{{ cache_id }}"
     ></script>
     <title>HBnB</title>
+    <style>
+      #api_status {
+        text-align: right;
+        width: 50px;
+        height: 50px;
+        border-radius: 40px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border-right: 30px;
+        background-color: #cccccc;
+      }
+    </style>
   </head>
   <body>
     <header>
       <div class="logo"></div>
+      <div id="api_status" class="available"></div>
     </header>
     <div class="container">
       <section class="filters">
